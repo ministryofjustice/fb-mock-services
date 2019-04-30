@@ -4,7 +4,7 @@
   "description": "Very simple mocks for Form Builder backends",
   "main": "index.js",
   "scripts": {
-    "start": "node user-datastore.js & node user-filestore.js & node submitter.js",
+    "start": "node lib/user-datastore.js & node lib/user-filestore.js & node lib/submitter.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "github@alex.fu2k.org",
