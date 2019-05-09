@@ -11,7 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
-    "swagger": "^0.7.5"
+    "swagger": "^0.7.5",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@ministryofjustice/eslint-config-fb": "^1.0.6"
