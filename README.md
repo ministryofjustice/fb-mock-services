@@ -37,3 +37,8 @@ USER_FILESTORE=4002 \
 SUBMITTER=4003 \
 npm start
 ```
+
+## Utils
+
+- [Postman collection](utils/fb-mocks.postman_collection.json)
+- [Postman environment](utils/fb-mocks.postman_environment.json)
