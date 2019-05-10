@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"{{email}}\",\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\",\n  \"link_template\": \"link_template\"\n}"
+							"raw": "{\n  \"email\": \"{{email}}\",\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\",\n  \"validation_url\": \"validation_url\"\n}"
 						},
 						"url": {
 							"raw": "{{saveReturnUrl}}/email/add",
@@ -50,7 +50,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"email\": \"{{email}}\",\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\",\n  \"link_template\": \"link_template\"\n}"
+									"raw": "{\n  \"email\": \"{{email}}\",\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\",\n  \"validation_url\": \"validation_url\"\n}"
 								},
 								"url": {
 									"raw": "{{saveReturnUrl}}/email/add",
@@ -109,7 +109,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\",\n  \"link_template\": \"link_template\"\n}"
+									"raw": "{\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\",\n  \"validation_url\": \"validation_url\"\n}"
 								},
 								"url": {
 									"raw": "{{saveReturnUrl}}/email/add",
