@@ -53,7 +53,9 @@ https://www.developerfiles.com/how-to-send-emails-from-localhost-mac-os-x-el-cap
 
 ##### 1. Create app password
 
-[Create a Google app password](https://myaccount.google.com/apppasswords) for your `digital.justice.gov.uk` address
+If you're using your `digital.justice.gov.uk` account to send from, you need to use an [app password](https://support.google.com/accounts/answer/185833)
+
+[Create a Google app password](https://myaccount.google.com/apppasswords)
 
 ##### 2. Edit postfix configuration
 
