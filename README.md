@@ -41,7 +41,7 @@ npm start
 ### Enabling sending of emails
 
 ```sh
-MAIL=yes npm start
+MAIL='Form Builder <form-builder-messages@digital.justice.gov.uk' npm start
 ```
 
 #### Configuring sendmail.postfix on OS X
@@ -107,6 +107,19 @@ otherwise
 
 ```sh
 sudo postfix reload
+```
+
+### Enabling sending of sms messages
+
+Create a trial account at [Twilio](https://www.twilio.com/)
+
+Create a number to send from and find your Account Sid and Auth Token in the [console](https://twilio.com/console)
+
+```sh
+ACCOUNTSID='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
+AUTHTOKEN='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
+MOBILE='+447777123456' \
+npm start
 ```
 
 ## Utils
