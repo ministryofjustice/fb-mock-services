@@ -10,8 +10,10 @@
   "author": "github@alex.fu2k.org",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "nodemailer": "^6.1.1",
+    "twilio": "^3.30.3",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
