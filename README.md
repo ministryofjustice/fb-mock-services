@@ -29,6 +29,14 @@ SERVICE_PATH=/path/to/form \
 npm start
 ```
 
+### Using .env file
+
+If you have a `.env` file, it will be loaded automatically if you specify the `MOCKENV` environment varibale
+
+```
+MOCKENV=yes npm start
+```
+
 ### Setting alternative ports
 
 ```sh
