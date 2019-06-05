@@ -11,13 +11,13 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.0.0",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "markdown-it": "^8.4.2",
-    "nodemailer": "^6.1.1",
-    "twilio": "^3.30.3",
+    "nodemailer": "^6.2.1",
+    "twilio": "^3.31.1",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@ministryofjustice/eslint-config-fb": "^1.0.6"
+    "@ministryofjustice/eslint-config-fb": "^1.0.7"
   }
 }
