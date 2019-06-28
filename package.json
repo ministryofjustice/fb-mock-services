@@ -10,9 +10,9 @@
   "author": "github@alex.fu2k.org",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "@ministryofjustice/eslint-config-fb": "^1.0.5"
+    "@ministryofjustice/eslint-config-fb": "^1.0.7"
   }
 }
