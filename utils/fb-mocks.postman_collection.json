@@ -1,0 +1,2093 @@
+{
+	"info": {
+		"_postman_id": "5b995bb2-962c-4c4b-821c-63012b45f5f4",
+		"name": "Form Builder Mocks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save and return",
+			"item": [
+				{
+					"name": "01 - setup - email details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"{{email}}\",\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\",\n  \"validation_url\": \"validation_url\"\n}"
+						},
+						"url": {
+							"raw": "{{saveReturnUrl}}/email/add",
+							"host": [
+								"{{saveReturnUrl}}"
+							],
+							"path": [
+								"email",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"{{email}}\",\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\",\n  \"validation_url\": \"validation_url\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/email/add",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"email",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:32:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "Missing field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\",\n  \"validation_url\": \"validation_url\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/email/add",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"email",
+										"add"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-pv6mXsk1Vq5smBQL+wX+9cA9qvw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:29:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"name\": \"missing.property.email\"\n}"
+						}
+					]
+				},
+				{
+					"name": "02 - setup - email confirm",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email_token\": \"valid\"\n}"
+						},
+						"url": {
+							"raw": "{{saveReturnUrl}}/email/confirm",
+							"host": [
+								"{{saveReturnUrl}}"
+							],
+							"path": [
+								"email",
+								"confirm"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Used",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email_token\": \"used\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/email/confirm",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"email",
+										"confirm"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-2RQMJtlCqu7MTTeFgLkHdnepPa8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:33:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"token.used\"\n}"
+						},
+						{
+							"name": "Missing field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"xemail_token\": \"valid\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/email/confirm",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"email",
+										"confirm"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-DLYEkxZLxdRhW+gbPRgzFIwH2go\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:35:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"name\": \"missing.property.email_token\"\n}"
+						},
+						{
+							"name": "Expired",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email_token\": \"expired\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/email/confirm",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"email",
+										"confirm"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-UXq5RIOvLZW0Ev4Gi0G+rSEqajE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:34:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"token.expired\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email_token\": \"valid\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/email/confirm",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"email",
+										"confirm"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-yk3OEJrdkAaFlgLcIOc4woMp8RY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:33:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"encrypted_details\": \"encrypted_details\"\n}"
+						},
+						{
+							"name": "Superseded",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email_token\": \"superseded\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/email/confirm",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"email",
+										"confirm"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-yQzx+Zb3lnohAGy3lRAEQwvvzd0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:34:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"token.superseded\"\n}"
+						}
+					]
+				},
+				{
+					"name": "03 - setup - mobile details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mobile\": \"{{mobile}}\",\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\"\n}\n"
+						},
+						"url": {
+							"raw": "{{saveReturnUrl}}/mobile/add",
+							"host": [
+								"{{saveReturnUrl}}"
+							],
+							"path": [
+								"mobile",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Missing field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"xmobile\": \"{{mobile}}\",\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\"\n}\n"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/mobile/add",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"mobile",
+										"add"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-y/co09x7tBIq+wTzAuuoi7iMg3I\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:36:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"name\": \"missing.property.mobile\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"mobile\": \"{{mobile}}\",\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\"\n}\n"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/mobile/add",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"mobile",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:35:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				},
+				{
+					"name": "04 - setup - mobile confirm",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"code\": \"12345\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+						},
+						"url": {
+							"raw": "{{saveReturnUrl}}/mobile/confirm",
+							"host": [
+								"{{saveReturnUrl}}"
+							],
+							"path": [
+								"mobile",
+								"confirm"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Missing field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"xcode\": \"12345\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/mobile/confirm",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"mobile",
+										"confirm"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-p71Q5Y2K3DnOrJcROHTA8IaQyFw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:40:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"name\": \"missing.property.code\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"12345\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/mobile/confirm",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"mobile",
+										"confirm"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-yk3OEJrdkAaFlgLcIOc4woMp8RY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:38:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"encrypted_details\": \"encrypted_details\"\n}"
+						},
+						{
+							"name": "Expired",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"77777\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/mobile/confirm",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"mobile",
+										"confirm"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-nBILfFMpnQxcjMjrbk5gha4g4cE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:39:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"code.expired\"\n}"
+						},
+						{
+							"name": "Superseded",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"88888\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/mobile/confirm",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"mobile",
+										"confirm"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-IaSGCKMUAo5T+VVMb3Cl18u9lJo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:39:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"code.superseded\"\n}"
+						},
+						{
+							"name": "Used",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"99999\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/mobile/confirm",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"mobile",
+										"confirm"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-z4fpd108DHAIeNXLOXDjQnrg89g\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:39:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"code.used\"\n}"
+						}
+					]
+				},
+				{
+					"name": "05 - setup - create record",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\"\n}"
+						},
+						"url": {
+							"raw": "{{saveReturnUrl}}/create",
+							"host": [
+								"{{saveReturnUrl}}"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Missing field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"xencrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/create",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-28NFJiyKjfpply+S6cDhmvpTf28\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:41:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"name\": \"missing.property.encrypted_email\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"encrypted_email\": \"encrypted_email\",\n  \"encrypted_details\": \"encrypted_details\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/create",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:41:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				},
+				{
+					"name": "11 - sign in - magiclink create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"{{email}}\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+						},
+						"url": {
+							"raw": "{{saveReturnUrl}}/signin/email",
+							"host": [
+								"{{saveReturnUrl}}"
+							],
+							"path": [
+								"signin",
+								"email"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Missing field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"xemail\": \"{{email}}\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/email",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"email"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-pv6mXsk1Vq5smBQL+wX+9cA9qvw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:42:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"name\": \"missing.property.email\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"{{email}}\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/email",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"email"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:42:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				},
+				{
+					"name": "12 - signin - magiclink confirm",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a48ecdd7-8b3d-4d59-9063-b63a41419c30",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"magiclink\": \"valid\"\n}"
+						},
+						"url": {
+							"raw": "{{saveReturnUrl}}/signin/magiclink",
+							"host": [
+								"{{saveReturnUrl}}"
+							],
+							"path": [
+								"signin",
+								"magiclink"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Missing field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"xmagiclink\": \"valid\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/magiclink",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"magiclink"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-XHHGNi8pEJmhrizmqIwJm50xCTo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:44:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"name\": \"missing.property.magiclink\"\n}"
+						},
+						{
+							"name": "Used",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"magiclink\": \"used\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/magiclink",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"magiclink"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-BWjhISF77DKMqG6c2d7CHTTQIZ8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:43:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"magiclink.used\"\n}"
+						},
+						{
+							"name": "Expired",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"magiclink\": \"expired\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/magiclink",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"magiclink"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-z/TCWSM36FGjWu4zeZSBoFQuiCA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:44:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"magiclink.expired\"\n}"
+						},
+						{
+							"name": "Superseded",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"magiclink\": \"superseded\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/magiclink",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"magiclink"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-XGhhBOpYDdQ1G158bb8hBrFc8jc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:43:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"magiclink.superseded\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"magiclink\": \"valid\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/magiclink",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"magiclink"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-yk3OEJrdkAaFlgLcIOc4woMp8RY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:43:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"encrypted_details\": \"encrypted_details\"\n}"
+						}
+					]
+				},
+				{
+					"name": "13 - signin - code create",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a48ecdd7-8b3d-4d59-9063-b63a41419c30",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mobile\": \"{{mobile}}\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+						},
+						"url": {
+							"raw": "{{saveReturnUrl}}/signin/mobile",
+							"host": [
+								"{{saveReturnUrl}}"
+							],
+							"path": [
+								"signin",
+								"mobile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Missing field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"xmobile\": \"{{mobile}}\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/mobile",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"mobile"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-y/co09x7tBIq+wTzAuuoi7iMg3I\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:45:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"name\": \"missing.property.mobile\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"mobile\": \"{{mobile}}\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/mobile",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"mobile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:45:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				},
+				{
+					"name": "14 - signin - code confirm",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a48ecdd7-8b3d-4d59-9063-b63a41419c30",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"code\": \"12345\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+						},
+						"url": {
+							"raw": "{{saveReturnUrl}}/signin/code/validate",
+							"host": [
+								"{{saveReturnUrl}}"
+							],
+							"path": [
+								"signin",
+								"code",
+								"validate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"12345\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/code/validate",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"code",
+										"validate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-yk3OEJrdkAaFlgLcIOc4woMp8RY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:46:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"encrypted_details\": \"encrypted_details\"\n}"
+						},
+						{
+							"name": "Used",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"99999\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/code/validate",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"code",
+										"validate"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-z4fpd108DHAIeNXLOXDjQnrg89g\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:46:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"code.used\"\n}"
+						},
+						{
+							"name": "Missing field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"xcode\": \"12345\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/code/validate",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"code",
+										"validate"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-p71Q5Y2K3DnOrJcROHTA8IaQyFw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:47:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"name\": \"missing.property.code\"\n}"
+						},
+						{
+							"name": "Expired",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"77777\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/code/validate",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"code",
+										"validate"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-nBILfFMpnQxcjMjrbk5gha4g4cE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:47:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"code.expired\"\n}"
+						},
+						{
+							"name": "Superseded",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"code\": \"88888\",\n  \"encrypted_email\": \"encrypted_email\"\n}"
+								},
+								"url": {
+									"raw": "{{saveReturnUrl}}/signin/code/validate",
+									"host": [
+										"{{saveReturnUrl}}"
+									],
+									"path": [
+										"signin",
+										"code",
+										"validate"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-IaSGCKMUAo5T+VVMb3Cl18u9lJo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2019 23:46:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 401,\n    \"name\": \"code.superseded\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

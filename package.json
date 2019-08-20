@@ -1,5 +1,5 @@
 {
-  "name": "fb-mocks",
+  "name": "fb-mock-services",
   "version": "1.0.0",
   "description": "Very simple mocks for Form Builder backends",
   "main": "index.js",
@@ -10,7 +10,12 @@
   "author": "github@alex.fu2k.org",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "markdown-it": "^8.4.2",
+    "nodemailer": "^6.2.1",
+    "twilio": "^3.31.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@ministryofjustice/eslint-config-fb": "^1.0.7"
