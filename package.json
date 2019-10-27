@@ -1,23 +1,25 @@
 {
   "name": "fb-mock-services",
-  "version": "1.0.0",
-  "description": "Very simple mocks for Form Builder backends",
+  "version": "1.0.1",
+  "description": "Form Builder mock services",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint lib",
+    "lint:fix": "eslint lib --fix",
     "start": "node lib/user-datastore.js & node lib/user-filestore.js & node lib/submitter.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "github@alex.fu2k.org",
+  "author": "Form Builder Team <form-builder-team@digital.justice.gov.uk>",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "markdown-it": "^8.4.2",
-    "nodemailer": "^6.2.1",
-    "twilio": "^3.31.1",
-    "uuid": "^3.3.2"
+    "markdown-it": "^10.0.0",
+    "nodemailer": "^6.3.1",
+    "twilio": "^3.36.0",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
-    "@ministryofjustice/eslint-config-fb": "^1.0.7"
+    "@ministryofjustice/eslint-config-fb": "^1.1.2"
   }
 }
