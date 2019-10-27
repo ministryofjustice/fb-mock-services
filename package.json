@@ -1,6 +1,6 @@
 {
   "name": "fb-mock-services",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Form Builder mock services",
   "main": "index.js",
   "scripts": {
