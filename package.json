@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "markdown-it": "^12.3.2",
     "nodemailer": "^6.6.1",
     "twilio": "^3.36.0",
