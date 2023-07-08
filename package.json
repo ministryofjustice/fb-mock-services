@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "markdown-it": "^12.3.2",
     "nodemailer": "^6.6.1",
-    "twilio": "^3.36.0",
+    "twilio": "^3.84.1",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
